@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Button Beispiel</title>
-		<style>
-			.center {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 100vh;
 <head>
 	<title>Button Beispiel</title>
 	<style>
@@ -33,6 +25,7 @@
 	<div class="center">
 		<button class="btn" onclick="authenticate()">Weiter</button>
 	</div>
+	Baum
 	<script>
 		var password = "Baum"; // Das Passwort, das zur Authentifizierung verwendet wird
 		var url = "https://wit10g.de/"; // Die URL, auf die der Benutzer weitergeleitet werden soll
@@ -44,23 +37,6 @@
 			} else {
 				alert("Passwort ist inkorrekt!"); // Zeigt eine Meldung an, wenn das Passwort inkorrekt ist
 			}
-
-			.btn {
-				background-color: #4CAF50;
-				color: white;
-				padding: 12px 24px;
-				border: none;
-				border-radius: 4px;
-				cursor: pointer;
-				font-size: 18px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="center">
-			<a href="https://wit10g.de/" target="_blank" class="btn">Weiter</a>
-		</div>
-	</body>
 		}
 	</script>
 </body>
