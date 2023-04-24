@@ -25,13 +25,15 @@
 	<div class="center">
 		<button class="btn" onclick="authenticate()">Weiter</button>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 	<script>
-		var password = "123"; // Das Passwort, das zur Authentifizierung verwendet wird
+		var hashedPassword = "a2e2ce1e24772fd8d4106d32da6a2b6a27a6d00f7a499a25f0c7c052d932a535"; // Das Passwort-Hash, das zur Authentifizierung verwendet wird
 		var url = "https://wit10g.de/"; // Die URL, auf die der Benutzer weitergeleitet werden soll
 		
 		function authenticate() {
 			var userInput = prompt("Bitte geben Sie das Passwort ein:", ""); // Eingabefeld zum Eingeben des Passworts
-			if (userInput == password) { // Überprüfen, ob das eingegebene Passwort mit dem festgelegten Passwort übereinstimmt
+			var hashedUserInput = CryptoJS.SHA256(userInput).toString(CryptoJS.enc.Hex); // Das eingegebene Passwort wird gehasht
+			if (hashedUserInput == hashedPassword) { // Überprüfen, ob das eingegebene Passwort-Hash mit dem festgelegten Passwort-Hash übereinstimmt
 				window.location.href = url; // Weiterleitung auf die angegebene URL, wenn das Passwort korrekt ist
 			} else {
 				alert("Passwort ist inkorrekt!"); // Zeigt eine Meldung an, wenn das Passwort inkorrekt ist
